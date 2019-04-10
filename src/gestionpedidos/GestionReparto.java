@@ -5,7 +5,6 @@ import gestionpedidos.pedido.Pedido;
 import gestionpedidos.transportes.Transporte;
 
 public class GestionReparto {
-	// CÓDIGO DE APOYO
 	private GestionRepartoLocal[] gestoresLocales;
 	private Mapa mapa;
 	
@@ -13,17 +12,14 @@ public class GestionReparto {
 		//TO-DO
 	}
 	
-	//CÓDIGO DE APOYO
 	public Mapa getMapa() {
 		return mapa;
 	}
 	
-	// CÓDIGO DE APOYO
 	public String getEstadoGestorLocal(int i){
 		return this.gestoresLocales[i].getDisponibles() + this.gestoresLocales[i].getEsperando();
 	}
 	
-	// CÓDIGO DE APOYO
 	public String getEstadoGestorLocalNum(int i){
 		return this.gestoresLocales[i].getCodMotosDisponibles().size() + ";" +
 				this.gestoresLocales[i].getCodFurgoDisponibles().size() + ";" +
@@ -36,7 +32,7 @@ public class GestionReparto {
 		//TO-DO
 	}
 		
-	//PRE: el pedido no tiene asignado ningún transporte
+	//PRE: el pedido no tiene asignado ningï¿½n transporte
 	public void asignarPedido(Pedido pedido){
 		//TO-DO
 	}
