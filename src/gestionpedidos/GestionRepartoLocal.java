@@ -8,7 +8,7 @@ import list.ArrayList;
 import queues.NaiveQueue;
 
 
-public class GestionRepartoLocal {	
+public class GestionRepartoLocal {
 	private ArrayList<Moto> motosDisponibles;
 	private ArrayList<Furgoneta> furgonetasDisponibles;
 
