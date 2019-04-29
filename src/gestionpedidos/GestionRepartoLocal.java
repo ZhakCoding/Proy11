@@ -97,16 +97,65 @@ public class GestionRepartoLocal {
 
 	//PRE: el transporte no ha sido asignado a ninguna zona
 	public void add(Transporte transporte){
-		//TO-DO
+		if(transporte instanceof Moto){
+			motosDisponibles.add(motosDisponibles.size(), transporte);
+		}
+		else if(transporte instanceof Furgoneta){
+			furgonetasDisponibles.add(furgonetasDisponibles.size(), transporte);
+		}
 	}
 			
-	//PRE: el pedido no tiene asignado ning�n transporte
+	//PRE: el pedido no tiene asignado ningun transporte
 	public void asignarPedido(Pedido pedido){
-		//TO-DO		
+		if(pedido.getPeso() <= PESOMAXMOTO){
+			if(motosDisponibles.size() > 0){
+				Transporte minimo = motosDisponibles.get(0);
+				for(int i = 0; i < motosDisponibles.size(); i++){
+					if(pedido.coste(motosDisponibles.get(i)) < pedido.coste(minimo)){
+						minimo = motosDisponibles.get(i);
+					}
+				}
+				pedido.setTransporte(minimo);
+				motosDisponibles.remove(minimo);
+			}
+			else{
+				pedidosEsperandoMoto.add(pedido);
+			}
+		}
+		else {
+			if(motosDisponibles.size() > 0){
+				Transporte minimo = furgonetasDisponibles.get(0);
+				for(int i = 0; i < furgonetasDisponibles.size(); i++){
+					if(pedido.coste(furgonetasDisponibles.get(i)) < pedido.coste(minimo)){
+						minimo = furgonetasDisponibles.get(i);
+					}
+				}
+				pedido.setTransporte(minimo);
+				furgonetasDisponibles.remove(minimo);
+			}
+			else{
+				pedidosEsperandoFurgoneta.add(pedido);
+			}
+		}
 	}
 	
 	//PRE: el pedido tiene asignado un transporte
-	public void notificarEntregaPedido(Pedido pedido) {	
-		//TO-DO	
+	public void notificarEntregaPedido(Pedido pedido) {
+		if(pedido.getTransporte() instanceof Moto){
+			if(!pedidosEsperandoMoto.isEmpty()){
+				pedidosEsperandoMoto.poll().setTransporte(pedido.getTransporte());
+			}
+			else {
+				motosDisponibles.add(motosDisponibles.size(), pedido.getTransporte());
+			}
+		}
+		else if(pedido.getTransporte() instanceof Furgoneta){
+			if(!pedidosEsperandoFurgoneta.isEmpty()){
+				pedidosEsperandoFurgoneta.poll().setTransporte(pedido.getTransporte());
+			}
+			else {
+				furgonetasDisponibles.add(furgonetasDisponibles.size(), pedido.getTransporte());
+			}
+		}
 	}
 }

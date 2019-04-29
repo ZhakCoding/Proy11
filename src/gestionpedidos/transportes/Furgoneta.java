@@ -8,7 +8,7 @@ public class Furgoneta extends Transporte {
 		this.tara = tara;
 	}
 
-	public Mapa getTara() {
+	public double getTara() {
 		return tara;
 	}
 }

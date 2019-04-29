@@ -12,7 +12,7 @@ public abstract class Transporte {
 	}
 	
 	public double coste(String codPosDestino) {
-		return coste(this.codigo,codPosDestino);
+		return coste(this.codigo, codPosDestino);
 	}
 	
 	public abstract double coste(String codPosOrigen, String codPosDestino);
