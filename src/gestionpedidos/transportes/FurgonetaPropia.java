@@ -5,10 +5,10 @@ public class FurgonetaPropia extends Furgoneta {
 	private final double EUROS_P_HORA = 40;
 		
 	public FurgonetaPropia(String codigo, Mapa mapa, double tara) {
-		// Falta pedir informacion
+		super(codigo, mapa, tara);
 	}
 	
-	public double coste(String codOrigen, String codDestino) {
+	public double coste(String codPosOrigen, String codPosDestino) {
 		//TO-DO
 	}
 }

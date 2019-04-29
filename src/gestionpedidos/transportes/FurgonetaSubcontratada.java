@@ -4,10 +4,10 @@ public class FurgonetaSubcontratada extends Furgoneta {
 	private double eurosPKm = 1;
 		
 	public FurgonetaSubcontratada(String codigo, Mapa mapa, double tara) {
-		// Falta pedir informacion
+		super(codigo, mapa, tara);
 	}
 	
-	public double coste(String codOrigen, String codDestino) {
+	public double coste(String codPosOrigen, String codPosDestino) {
 		//TO-DO
 	}
 }

@@ -2,7 +2,7 @@ package gestionpedidos.transportes;
 
 import gestionpedidos.mapa.Mapa;
 
-public class Transporte {
+public abstract class Transporte {
 	private String codigo;
 	private Mapa mapa;
 		
@@ -11,15 +11,18 @@ public class Transporte {
 		this.mapa = mapa;
 	}
 	
-	public double coste(String posDestino) {
+	public double coste(String codPosDestino) {
 		//TO-DO
+		// Hacer el ultimo, tiene truco
 	}
 	
-	public double coste(String cod1, String cod2) {
-		//TO-DO
-	}
+	public abstract double coste(String codPosOrigen, String codPosDestino);
 	
 	public Mapa getMapa() {
 		return mapa;
+	}
+
+	public Mapa getCodigo() {
+		return codigo;
 	}
 }

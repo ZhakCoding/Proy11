@@ -4,12 +4,10 @@ public class Moto extends Transporte {
 	private double eurosPKm = 2;
 		
 	public Moto(String codigo, Mapa mapa) {
-		this.codigo = codigo;
-		this.mapa = mapa;
-		// Falta pedir informacion
+		super(codigo, mapa);
 	}
 	
-	public double coste(String codOrigen, String codDestino) {
+	public double coste(String codPosOrigen, String codPosDestino) {
 		//TO-DO
 	}
 }
