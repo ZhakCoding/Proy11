@@ -23,16 +23,13 @@ public class Pedido {
 			this.peso += comidas[i].getPeso();
 		}
 	}
-
+	
+	public double coste(Transporte transporte) {
+		return importe + transporte.coste(Restaurante.getCodigo()) + transporte.coste(Restaurante.getCodigo(), Cliente.getCodigo());
+	}
 	
 	public double getPeso() {
 		return peso;
-	}
-	
-	
-	public double coste(Transporte transporte) {
-		//TO-DO
-		return 0;
 	}
 	
 	public double getImporte() {

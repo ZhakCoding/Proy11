@@ -23,8 +23,8 @@ public class GestionRepartoLocal {
 	}
 	
 	private static ArrayList<String[]> getClienteRestauranteList(NaiveQueue<Pedido> pendientes){
-		 ArrayList<String[]> salida = new ArrayList<>();
-		 NaiveQueue<Pedido> aux = new NaiveQueue<>();
+		ArrayList<String[]> salida = new ArrayList<>();
+		NaiveQueue<Pedido> aux = new NaiveQueue<>();
 		while(!pendientes.isEmpty()) {
 			Pedido pedido = pendientes.poll();
 			
@@ -33,7 +33,7 @@ public class GestionRepartoLocal {
 			aux.add(pedido);
 		}
 		while (!aux.isEmpty())
-			 pendientes.add(aux.poll());
+			pendientes.add(aux.poll());
 		
 		return salida;
 	}
@@ -47,7 +47,8 @@ public class GestionRepartoLocal {
 				for(int j=0; j<item.length; j++){
 					salida += item[j] ;
 				}	
-			}else if (list.get(i) instanceof String){
+			}
+			else if (list.get(i) instanceof String){
 				salida += (String)list.get(i);
 			}
 		}
