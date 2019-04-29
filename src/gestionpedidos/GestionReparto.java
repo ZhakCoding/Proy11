@@ -32,11 +32,6 @@ public class GestionReparto {
 				this.gestoresLocales[i].getCodEsperandoMoto().size() + ";" +
 				this.gestoresLocales[i].getCodEsperandoFurgo().size() ;
 	}
-
-	// Zona 0: X  [0, maxCoordX/2] Y  [0, maxCoordY/2]
-	// Zona 1: X  [0, maxCoordX/2] Y  [maxCoordY/2 + 1, maxCoordY]
-	// Zona 2: X  [maxCoordX/2 + 1, maxCoordX] Y  [0, maxCoordY/2]
-	// Zona 3: X  [maxCoordX/2 + 1, maxCoordX] Y  [maxCoordY/2 + 1, maxCoordY]
 	
 	
 	//PRE: el transporte no ha sido asignado a ninguna zona
@@ -46,20 +41,78 @@ public class GestionReparto {
 		int maxCoordX = mapa.getMaxCoordX();
 		int maxCoordY = mapa.getMaxCoordY();
 
-		// Zona 0
-		if(x <= maxCoordX/2 && y <= maxCoordY/2){
-			
+		if(x <= maxCoordX/2){
+			// Zona 0
+			if(y <= maxCoordY/2)
+				gestoresLocales[0].add(transporte);
+
+			// Zona 1
+			else
+				gestoresLocales[1].add(transporte);
+		}
+		else {
+			// Zona 2
+			if(y <= maxCoordY/2)
+				gestoresLocales[2].add(transporte);
+
+			// Zona 3
+			else
+				gestoresLocales[3].add(transporte);
 		}
 	}
 		
-	//PRE: el pedido no tiene asignado ning�n transporte
+	//PRE: el pedido no tiene asignado ningun transporte
 	public void asignarPedido(Pedido pedido){
-		//TO-DO
+		int x = mapa.getPosicion(pedido.getCliente().getCodigo()).getX();
+		int y = mapa.getPosicion(pedido.getCliente().getCodigo()).getY();
+		int maxCoordX = mapa.getMaxCoordX();
+		int maxCoordY = mapa.getMaxCoordY();
+
+		if(x <= maxCoordX/2){
+			// Zona 0
+			if(y <= maxCoordY/2)
+				gestoresLocales[0].asignarPedido(pedido);
+
+			// Zona 1
+			else
+				gestoresLocales[1].asignarPedido(pedido);
+		}
+		else {
+			// Zona 2
+			if(y <= maxCoordY/2)
+				gestoresLocales[2].asignarPedido(pedido);
+
+			// Zona 3
+			else
+				gestoresLocales[3].asignarPedido(pedido);
+		}
 	}
 	
 	//PRE: el pedido tiene asignado un transporte
 	public void notificarEntregaPedido(Pedido pedido){
-		//TO-DO
+		int x = mapa.getPosicion(pedido.getCliente().getCodigo()).getX();
+		int y = mapa.getPosicion(pedido.getCliente().getCodigo()).getY();
+		int maxCoordX = mapa.getMaxCoordX();
+		int maxCoordY = mapa.getMaxCoordY();
+
+		if(x <= maxCoordX/2){
+			// Zona 0
+			if(y <= maxCoordY/2)
+				gestoresLocales[0].notificarEntregaPedido(pedido);
+
+			// Zona 1
+			else
+				gestoresLocales[1].notificarEntregaPedido(pedido);
+		}
+		else {
+			// Zona 2
+			if(y <= maxCoordY/2)
+				gestoresLocales[2].notificarEntregaPedido(pedido);
+
+			// Zona 3
+			else
+				gestoresLocales[3].notificarEntregaPedido(pedido);
+		}
 	}
 	
 }

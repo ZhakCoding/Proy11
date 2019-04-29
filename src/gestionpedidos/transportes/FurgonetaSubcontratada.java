@@ -1,5 +1,7 @@
 package gestionpedidos.transportes;
 
+import gestionpedidos.mapa.Mapa;
+
 public class FurgonetaSubcontratada extends Furgoneta {
 	private double eurosPKm = 1;
 		
@@ -13,5 +15,13 @@ public class FurgonetaSubcontratada extends Furgoneta {
 			precio *= 1.10; 
 		}
 	    return precio;
+	}
+	
+	public double getEurosPKm() {
+		return eurosPKm;
+	}
+
+	public void setEurosPKm(double eurosPKm) {
+		this.eurosPKm = eurosPKm;
 	}
 }

@@ -1,5 +1,7 @@
 package gestionpedidos.transportes;
 
+import gestionpedidos.mapa.Mapa;
+
 public class FurgonetaPropia extends Furgoneta {
 	private double velocidadMedia = 30;
 	private final double EUROS_P_HORA = 40;
@@ -14,5 +16,13 @@ public class FurgonetaPropia extends Furgoneta {
 			precio *= 1.10;
 		}
 	    return precio;
+	}
+	
+	public double getVelocidadMedia() {
+		return velocidadMedia;
+	}
+
+	public void setVelocidadMedia(double velocidadMedia) {
+		this.velocidadMedia = velocidadMedia;
 	}
 }

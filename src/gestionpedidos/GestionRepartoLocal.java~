@@ -106,7 +106,7 @@ public class GestionRepartoLocal {
     public void asignarPedido(Pedido pedido){
         if(pedido.getPeso() <= PESOMAXMOTO){
             if(motosDisponibles.size() > 0){
-                Moto minimo = motosDisponibles.get(0);
+                Transporte minimo = motosDisponibles.get(0);
                 for(int i = 0; i < motosDisponibles.size(); i++){
                     if(pedido.coste(motosDisponibles.get(i)) < pedido.coste(minimo)){
                         minimo = motosDisponibles.get(i);
@@ -120,8 +120,8 @@ public class GestionRepartoLocal {
             }
         }
         else {
-            if(furgonetasDisponibles.size() > 0){
-                Furgoneta minimo = furgonetasDisponibles.get(0);
+            if(motosDisponibles.size() > 0){
+                Transporte minimo = furgonetasDisponibles.get(0);
                 for(int i = 0; i < furgonetasDisponibles.size(); i++){
                     if(pedido.coste(furgonetasDisponibles.get(i)) < pedido.coste(minimo)){
                         minimo = furgonetasDisponibles.get(i);
