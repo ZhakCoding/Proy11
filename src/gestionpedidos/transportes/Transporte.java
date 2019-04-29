@@ -12,8 +12,7 @@ public abstract class Transporte {
 	}
 	
 	public double coste(String codPosDestino) {
-		//TO-DO
-		// Hacer el ultimo, tiene truco
+		return coste(this.codigo,codPosDestino);
 	}
 	
 	public abstract double coste(String codPosOrigen, String codPosDestino);
@@ -22,7 +21,4 @@ public abstract class Transporte {
 		return mapa;
 	}
 
-	public Mapa getCodigo() {
-		return codigo;
-	}
 }

@@ -8,6 +8,6 @@ public class Moto extends Transporte {
 	}
 	
 	public double coste(String codPosOrigen, String codPosDestino) {
-		//TO-DO
+		return super.getMapa().distancia(codPosOrigen, codPosDestino) * eurosPKm;
 	}
 }

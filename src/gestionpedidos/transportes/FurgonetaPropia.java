@@ -9,6 +9,11 @@ public class FurgonetaPropia extends Furgoneta {
 	}
 	
 	public double coste(String codPosOrigen, String codPosDestino) {
-		//TO-DO
+		double precio=0;
+		if(super.getTara()<500){   
+			precio = super.getMapa().distancia(codPosOrigen, codPosDestino)*EUROS_P_HORA / velocidadMedia;
+			}
+		else{precio = super.getMapa().distancia(codPosOrigen, codPosDestino)*EUROS_P_HORA / velocidadMedia *1.10; }
+	    return precio;
 	}
 }
