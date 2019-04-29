@@ -20,5 +20,9 @@ public abstract class Transporte {
 	public Mapa getMapa() {
 		return mapa;
 	}
+	
+	public String getCodigo() {
+		return mapa;
+	}
 
 }
