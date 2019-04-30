@@ -1,6 +1,16 @@
 package gestionpedidos.pedido;
 
 import gestionpedidos.transportes.Transporte;
+import anotacion.Programacion2; 
+
+@Programacion2 (
+	nombreAutor1 = "Sergio Duncan",
+	apellidoAutor1 = "de Propios Corbo",
+	emailUPMAutor1 = "sd.depropios@alumnos.upm.es",
+	nombreAutor2 = "Jorge",
+	apellidoAutor2 = "del Amo Arrieta", 
+	emailUPMAutor2 = "j.delamoa@alumnos.upm.es"
+)
 
 public class Pedido {
  private Cliente cliente;

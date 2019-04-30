@@ -1,7 +1,7 @@
-// Es necesario añadir al proyecto la librería CorrectorOffline.jar
+// Es necesario aï¿½adir al proyecto la librerï¿½a CorrectorOffline.jar
 // que se encuentra en moodle
 // Este paquete hay que importarlo para que el compilador 
-// reconozca la anotación @Programacion2
+// reconozca la anotaciï¿½n @Programacion2
 import anotacion.Programacion2; 
 
 // Rellenar siempre los datos del Autor 1
@@ -12,6 +12,6 @@ import anotacion.Programacion2;
 	emailUPMAutor1 = "sd.depropios@alumnos.upm.es",
 	nombreAutor2 = "Jorge",
 	apellidoAutor2 = "del Amo Arrieta", 
-	emailUPMAutor2 = ""
+	emailUPMAutor2 = "j.delamoa@alumnos.upm.es"
 )
 
